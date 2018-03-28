@@ -8,12 +8,16 @@ resultadob = 2 + (2*3) +1
 resultadoc = 3^4 + (5 * 2^5) + 1
 
 --exercício02
+mult3 :: Integer -> Bool
 mult3 x = ( x `rem` 3 == 0 ) 
 
 --exercício03
+mult5 :: Integer -> Bool
 mult5 x = ( x `rem` 5 == 0 ) 
 
-
+--exercício04
+mult35 :: Integer -> Bool
+mult35 x = ( x `rem` 3 == 0 ) && ( x `rem` 5 == 0 )
 
 
 
@@ -51,6 +55,10 @@ main = do
   putStrLn " "
 --exercício04
   print ("exercicio_04")
+  print("15 / 3 && 15 / 5 = " ++ show (mult35 15))
+  print("11 / 3 && 11 / 5 = " ++ show (mult35 11))
+  print("90 / 3 && 90 / 5 = " ++ show (mult35 90))
+  print("9 / 3 && 9 / 5 = " ++ show (mult35 9))
   
 ----pular linha
   putStrLn " "  
