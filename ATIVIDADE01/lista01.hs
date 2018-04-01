@@ -28,46 +28,45 @@ divide2 :: Integer -> Double
 divide2 x = fromIntegral x / 2
 
 -- Exercício 07: Faça uma função que receba um ângulo a e retorne uma tupla contendo o seno da metade desse ângulo utilizando a identidade:
-prog2 :: (Double) -> (Double, Double)
-prog2 x  = (x1,x2)
-    where
-      x1 = calc
-      x2 = (-1)*calc
-      calc = sqrt( (1 - cos(x)) / 2 )
-
+seno :: (Double) -> (Double, Double)
+seno x  = (sqrt ((1 - cos x)/ 2), - sqrt ((1 - cos x)/ 2))
 
 -- Exercício 08: Crie uma lista de anos bissextos desde o ano 1 até o atual.
-lista1 = [x| x<-[1..2018], (x `rem` 400 == 0) || ((x `rem` 4 == 0) && (x `rem` 100 /= 0)) ]
+bissexto :: Integer -> Bool
+bissexto anox = (anox `rem` 400 == 0) || ((anox `rem` 4 == 0) && ( anox `rem` 100 /= 0))
+listabissexto = [anox | anox <- [1..2018], bissexto anox]
 
--- Exercício 09: Encontre os 10 primeiros anos bissextos
-lista2 = take 10 lista1
-lista3 = [lista1 !! x| x<-[length(lista1)-11..length(lista1)-1]]
+-- Exercício 09: Encontre os 10 primeiros anos bissextos e os 10 últimos anos bissextos.
+-- bissexto anox = (anox `rem` 400 == 0) || ((anox `rem` 4 == 0) && ( anox `rem` 100 /= 0))
+-- let listabissexto = [x | x <- [1..2018], bissexto x]
+dezprimeiros = take 10 listabissexto
+dezultimos = drop (length listabissexto - 10) listabissexto
 
 -- Exercício 10: Crie uma tupla em que o primeiro elemento tem metade dos anos bissextos e o segundo elemento a outra metade.
---primeirametade = [lista1 !! x| x<-[0..(length(lista1) `div` 2)]]
---segundametade = [lista1 !! x| x<-[(length(lista1) `div` 2)+1..(length(lista1)-1)]]
---lista4 = [(primeirametade,segundametade
+-- bissexto anox = (anox `rem` 400 == 0) || ((anox `rem` 4 == 0) && ( anox `rem` 100 /= 0))
+-- let listabissexto = [x | x <- [1..2018], bissexto x]
+metadeinicial = take (length listabissexto `div` 2) listabissexto
+metadefinal = drop (length listabissexto `div` 2) listabissexto
+resultado = (metadeinicial, metadefinal)
 
 --Exercício 11: Crie um concatenador de strings que concatena duas strings separadas por espaço.
-
 concatena :: String -> String -> String
-concatena a b = a ++ b
+concatena a b = a ++ " " ++ b
 
 --Exercício 12: Dada a string “0123456789”, crie uma lista com os dígitos em formato Integer.
-sequencia = "0123456789"
-lista5 = [read(map(\c -> [c]) sequencia !! x)::Integer|x<-[0..(length(sequencia)-1)]]
+stringToInt :: String -> [Integer]
+digitos = stringToInt "0123456789"
+stringToInt x = map (read . (:"")) x :: [Integer]
+
 
 --Separando os Prints 
---main :: IO()
+main :: IO()
 main = do
-
-
+  print ("Lista 01- "++ "Angelica Satiko Koga")
 ----pular linha
   putStrLn " "
-  print ("Angelica Satiko Koga")
-  putStrLn " "
 --exercício01
-  print ("exercicio_01")
+  print ("Exercicio_01")
   print ("2 x 3 + 5 = " ++ show (resultadoa))
   print ("2 + 2 x 3 + 1 = " ++ show (resultadob))
   print ("3^4 + 5 x 2^5 + 1 = " ++ show (resultadoc))
@@ -75,7 +74,7 @@ main = do
 ----pular linha
   putStrLn " "
 --exercício02
-  print ("exercicio_02")
+  print ("Exercicio_02")
   print("36 / 3 = " ++ show (mult3 36))
   print("20 / 3 = " ++ show (mult3 20))
   print("15 / 3 = " ++ show (mult3 15))
@@ -84,7 +83,7 @@ main = do
 ----pular linha
   putStrLn " "
 --exercício03
-  print ("exercicio_03")
+  print ("Exercicio_03")
   print("91 / 5 = " ++ show (mult5 91))
   print("80 / 5 = " ++ show (mult5 80))
   print("34 / 5 = " ++ show (mult5 34))
@@ -93,7 +92,7 @@ main = do
 ----pular linha
   putStrLn " "
 --exercício04
-  print ("exercicio_04")
+  print ("Exercicio_04")
   print("15 / 3 && 15 / 5 = " ++ show (mult35 15))
   print("11 / 3 && 11 / 5 = " ++ show (mult35 11))
   print("90 / 3 && 90 / 5 = " ++ show (mult35 90))
@@ -102,17 +101,16 @@ main = do
 ----pular linha
   putStrLn " "  
 --exercício05
-  print ("exercicio_05")
+  print ("Exercicio_05")
   print("(-3) < -1 OU ((-3) > 1 E (-3) / 2 = 0) = " ++ show (atv5 (-3)))
   print("(0) < -1 OU ((0) > 1 && (0) / 2 = 0) = " ++ show (atv5 (0)))
   print("(50) < -1 OU ((50) > 1 && (50) / 2 = 0)  = "++ show (atv5 (50)))
   print("(17) < -1 OU ((17) > 1 && (17) / 2 = 0)  " ++ show (atv5 (17)))
-    
-  
+ 
 ----pular linha
   putStrLn " "  
 --exercício06
-  print ("exercicio_06")
+  print ("Exercicio_06")
   print("9 / 2 = " ++ show (divide2 9))
   print("43 / 2 = " ++ show (divide2 43))
   print("90 / 2 = " ++ show (divide2 90))
@@ -122,44 +120,45 @@ main = do
 ----pular linha
   putStrLn " "  
 --exercício07
-  print ("exercicio_07")
-  print(prog2 0)
-  
+  print ("Exercicio_07")
+  print ("(sqrt ((1- cos 90)/2),- sqrt ((1- cos 90)/2)) = " ++ show (seno 90))
+  print ("(sqrt ((1- cos 60)/2),- sqrt ((1- cos 60)/2)) = " ++ show (seno 60))
+    
 ----pular linha
   putStrLn " "  
 --exercício08
-  print ("exercicio_08")
-  print(lista1)
+  print ("Exercicio_08")
+  print("Anos bissextos: " ++ show (listabissexto))
 
 ----pular linha
   putStrLn " "  
 --exercício09
-  print ("exercicio_09")
-  print(lista2)
-  print(lista3)
- 
+  print ("Exercicio_09")
+  print("9.1- Dez primeiros: " ++ show (dezprimeiros))
+  print ("9.2- Dez ultimos: " ++ show (dezultimos))
+  
 ----pular linha
   putStrLn " "
 --exercício10
-  print ("exercicio_10")
---  print(lista4)
-  
+  print ("Exercicio_10")
+  print (resultado)
+    
 ----pular linha
   putStrLn " "  
 --exercício11
-  print ("exercicio_11")
+  print ("Exercicio_11")
+  let palavra1 = "Ola"
+  let palavra2 = "Mundo!"
   print ("Palavras:")
-  print ("1- "++ "Ola ")
-  print ("2- " ++ "Mundo!")
+  print ("1-"++" "++ palavra1)
+  print ("2-"++" "++ palavra2)
   print ("Palavras Concatenadas:")
-  print (concatena "Ola " "Mundo")
-  
-  
-  
+  print (concatena palavra1 palavra2)
+      
 ----pular linha
   putStrLn " "
 --exercício12
-  print ("exercicio_12")
-  print(lista5)
+  print ("Exercicio_12")
+  print(digitos)
 ----pular linha
   putStrLn " "
