@@ -1,6 +1,7 @@
---lista 01
+--lista 01 -- Angélica Koga
 --module Main where
---Separando osFunções
+
+--Separando as Funções
 --Exercício 01: Execute as seguintes operações utilizando o menor número de parênteses:
 resultadoa = 2*3+5
 resultadob = 2+2*3+1
@@ -112,7 +113,7 @@ main = do
     
   putStrLn " "  
   print ("Exercicio_08")
-  print("Anos bissextos: " ++ show (listabissexto))
+  print("Todos os Anos Bissextos: " ++ show (listabissexto))
 
   putStrLn " "  
   print ("Exercicio_09")
@@ -121,8 +122,8 @@ main = do
   
   putStrLn " "
   print ("Exercicio_10")
-  print (resultado)
-    
+  print("Tupla de metadeBissexto: " ++ show (resultado))
+
   putStrLn " "  
   print ("Exercicio_11")
   let palavra1 = "Ola"
