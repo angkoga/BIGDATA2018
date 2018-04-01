@@ -1,6 +1,5 @@
 --lista 01
 --module Main where
-
 --Separando osFunções
 --Exercício 01: Execute as seguintes operações utilizando o menor número de parênteses:
 resultadoa = 2*3+5
@@ -65,51 +64,40 @@ main = do
   print ("Lista 01- "++ "Angelica Satiko Koga")
 ----pular linha
   putStrLn " "
---exercício01
   print ("Exercicio_01")
   print ("2 x 3 + 5 = " ++ show (resultadoa))
   print ("2 + 2 x 3 + 1 = " ++ show (resultadob))
   print ("3^4 + 5 x 2^5 + 1 = " ++ show (resultadoc))
   
-----pular linha
   putStrLn " "
---exercício02
   print ("Exercicio_02")
   print("36 / 3 = " ++ show (mult3 36))
   print("20 / 3 = " ++ show (mult3 20))
   print("15 / 3 = " ++ show (mult3 15))
   print("11 / 3 = " ++ show (mult3 11))
   
-----pular linha
   putStrLn " "
---exercício03
   print ("Exercicio_03")
   print("91 / 5 = " ++ show (mult5 91))
   print("80 / 5 = " ++ show (mult5 80))
   print("34 / 5 = " ++ show (mult5 34))
   print("25 / 5 = " ++ show (mult5 25))
 
-----pular linha
   putStrLn " "
---exercício04
   print ("Exercicio_04")
   print("15 / 3 && 15 / 5 = " ++ show (mult35 15))
   print("11 / 3 && 11 / 5 = " ++ show (mult35 11))
   print("90 / 3 && 90 / 5 = " ++ show (mult35 90))
   print("9 / 3 && 9 / 5 = " ++ show (mult35 9))
   
-----pular linha
   putStrLn " "  
---exercício05
   print ("Exercicio_05")
   print("(-3) < -1 OU ((-3) > 1 E (-3) / 2 = 0) = " ++ show (atv5 (-3)))
   print("(0) < -1 OU ((0) > 1 && (0) / 2 = 0) = " ++ show (atv5 (0)))
   print("(50) < -1 OU ((50) > 1 && (50) / 2 = 0)  = "++ show (atv5 (50)))
   print("(17) < -1 OU ((17) > 1 && (17) / 2 = 0)  " ++ show (atv5 (17)))
  
-----pular linha
   putStrLn " "  
---exercício06
   print ("Exercicio_06")
   print("9 / 2 = " ++ show (divide2 9))
   print("43 / 2 = " ++ show (divide2 43))
@@ -117,35 +105,25 @@ main = do
   print("1 / 2 = " ++ show (divide2 1))
   print("-5 / 2 = " ++ show (divide2 (-5)))
   
-----pular linha
   putStrLn " "  
---exercício07
   print ("Exercicio_07")
   print ("(sqrt ((1- cos 90)/2),- sqrt ((1- cos 90)/2)) = " ++ show (seno 90))
   print ("(sqrt ((1- cos 60)/2),- sqrt ((1- cos 60)/2)) = " ++ show (seno 60))
     
-----pular linha
   putStrLn " "  
---exercício08
   print ("Exercicio_08")
   print("Anos bissextos: " ++ show (listabissexto))
 
-----pular linha
   putStrLn " "  
---exercício09
   print ("Exercicio_09")
   print("9.1- Dez primeiros: " ++ show (dezprimeiros))
   print ("9.2- Dez ultimos: " ++ show (dezultimos))
   
-----pular linha
   putStrLn " "
---exercício10
   print ("Exercicio_10")
   print (resultado)
     
-----pular linha
   putStrLn " "  
---exercício11
   print ("Exercicio_11")
   let palavra1 = "Ola"
   let palavra2 = "Mundo!"
@@ -155,10 +133,7 @@ main = do
   print ("Palavras Concatenadas:")
   print (concatena palavra1 palavra2)
       
-----pular linha
   putStrLn " "
---exercício12
   print ("Exercicio_12")
   print(digitos)
-----pular linha
   putStrLn " "
