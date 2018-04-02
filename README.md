@@ -4,4 +4,4 @@ Repositório de exercícios da disciplina [Inteligência na Web e Big Data do pr
 
 [Disciplina e informações](https://folivetti.github.io/teaching/).
 
-Haskell - [Repl.it - online] (https://repl.it/repls/EmotionalVainNamebinding).
+Repl.it [(online) - haskell] (https://repl.it/repls/EmotionalVainNamebinding).
