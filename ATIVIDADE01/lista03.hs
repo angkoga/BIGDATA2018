@@ -47,13 +47,11 @@ aplicaCollatz x
 	  |x == 1 = []
       |collatz x == 1 = [1]
       |otherwise = collatz x : aplicaCollatz (collatz x)
-
 collatzLen x = length $ aplicaCollatz x
 
 --Exercício 08: Encontre o número x entre 1 e 1.000.000 que tem a maior sequência de Collatz. (Project Euler 14)
 --collatzSeq :: Integer -> Integer
 collatzSeq = maximum [collatzLen i | i <- [1..1000000]]
-
 
 
 --Separando os Prints 
@@ -102,6 +100,5 @@ main = do
   
   putStrLn " "  
   print ("Exercicio 08: nao otimizado.")
-  print (collatzSeq)
-    
+  print (collatzSeq)    
   putStrLn " "
