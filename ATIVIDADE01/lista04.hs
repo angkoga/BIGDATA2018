@@ -1,4 +1,4 @@
---lista 04 -- Angélica Koga
+--lista 04 (Matrizes) -- Angélica Koga
 --module Main where
 
 --Separando as Funções
@@ -16,15 +16,15 @@ main = do
   print ("Lista 04- "++ "Angelica Satiko Koga")
 ----pular linha
   putStrLn " "
-  print ("exercicio_01")
+  print ("Exercicio 01:")
   print ( )
   
   putStrLn " "
-  print ("exercicio_02")
+  print ("Exercicio 02:")
   print ( )
     
   putStrLn " "
-  print ("exercicio_03")
+  print ("Exercicio 03:")
     print ( )
    
   putStrLn " "
