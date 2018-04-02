@@ -43,19 +43,17 @@ collatz x
   
 --Exercício 07: Implemente uma função collatzLen x que retorna o tamanho da lista formada pela aplicação repetida de collatz sobre o valor x até que essa chegue no número 1.
 --collatzLen :: Integer -> Integer
-
 aplicaCollatz x
-  |x == 1 = []
-  |collatz x == 1 = [1]
-  |otherwise = collatz x : aplicaCollatz (collatz x)
-  
+	  |x == 1 = []
+      |collatz x == 1 = [1]
+      |otherwise = collatz x : aplicaCollatz (collatz x)
+
 collatzLen x = length $ aplicaCollatz x
 
-print ("collatzLen 4 = "(collatzLen 4))
-print ("collatzLen 9 = "(collatzLen 9))
-print ("collatzLen 10 = "(collatzLen 10))
-
 --Exercício 08: Encontre o número x entre 1 e 1.000.000 que tem a maior sequência de Collatz. (Project Euler 14)
+--collatzSeq :: Integer -> Integer
+collatzSeq = maximum [collatzLen i | i <- [1..1000000]]
+
 
 
 --Separando os Prints 
@@ -71,19 +69,21 @@ main = do
   
   putStrLn " "
   print ("Exercicio 02:")
-  print ("projectEuler otimizado = " ++ show (projectEuler))
+  print ("projectEuler = " ++ show (projectEuler))
     
   putStrLn " "
   print ("Exercicio 03:")
-  print ("Fibonacci = " ++ show (take 10 fibonacci))
-  
+  print ("5 primeiros Fibonacci = " ++ show (take 5 fibonacci))
+  print ("10 primeiros Fibonacci = " ++ show (take 10 fibonacci))
+
   putStrLn " "
   print ("Exercicio 04:")
   print ("projectEuler: soma dos valores que nao excedem 4000000 = " ++ show (projectEuler2))
   
   putStrLn " "  
   print ("Exercicio 05:")
-  print (produtoEscalar [2,1] [4,3])  
+  print ("produtoEscalar de [2,1] [4,3] = " ++ show (produtoEscalar [2,1] [4,3]))  
+  print ("produtoEscalar de [5,5] [7,7] = " ++ show (produtoEscalar [5,5] [7,7])) 
   
   putStrLn " "  
   print ("Exercicio 06:")
@@ -101,7 +101,7 @@ main = do
   print ("collatzLen 10 = " ++ show (collatzLen 10))
   
   putStrLn " "  
-  print ("Exercicio 08:")
-  print ( )
+  print ("Exercicio 08: nao otimizado.")
+  print (collatzSeq)
     
   putStrLn " "
