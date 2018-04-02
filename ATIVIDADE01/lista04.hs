@@ -6,11 +6,9 @@ module Main where
 matrizIdentidade :: Integer -> [[Integer]]
 matrizIdentidade n =  [[if (y == x) then 1 else 0 | x <- [1..n]] | y <- [1..n]]
 
-
 --Exercício 02: Faça uma função que calcule a soma da diagonal principal de uma matriz.
 somaDPrincipal :: [[Integer]] -> Integer
 somaDPrincipal x = sum (zipWith (!!) x [0..])
-
 
 --Exercício 03: Faça uma função que calcule a soma da diagonal secundária de uma matriz.
 somaDSecundaria :: [[Integer]] -> Integer
@@ -29,7 +27,6 @@ main = do
   print ("matrizIdentidade 9:")
   print (matrizIdentidade 9)
   
-  
   putStrLn " "
   print ("Exercicio 02:")
   print ("Soma da Diagonal Principal da matrizIdentidade 7:")
@@ -40,13 +37,16 @@ main = do
   print ("8 1 9")
   print ("8 8 1")
   print ("= " ++ show(somaDPrincipal [[1,9,9],[8,1,9],[8,8,1]]))
-  
+  print ("Soma da Diagonal Principal da seguinte matriz:")
+  print ("9 1")
+  print ("1 9")
+  print ("= " ++ show(somaDPrincipal [[9,1],[1,9]]))
   
   putStrLn " "
   print ("Exercicio 03:")
-  print ("Soma da Diagonal Secundaria da matrizIdentidade 3:")
-  print (matrizIdentidade 3)
-  print ("= " ++ show(somaDSecundaria (matrizIdentidade 3)))
+  print ("Soma da Diagonal Secundaria da matrizIdentidade 2:")
+  print (matrizIdentidade 2)
+  print ("= " ++ show(somaDSecundaria (matrizIdentidade 2)))
   print ("Soma da Diagonal Secundaria da seguinte matriz:")
   print ("1 1 1 2")
   print ("3 3 2 3")
@@ -54,9 +54,10 @@ main = do
   print ("2 7 7 7")
   print ("= " ++ show(somaDSecundaria [[1,1,1,2],[3,3,2,3],[5,2,5,5],[2,7,7,7]]))
   print ("Soma da Diagonal Secundaria da seguinte matriz:")
-  print ("1 1 1 3")
-  print ("1 1 3 1")
-  print ("1 3 1 1")
-  print ("3 1 1 1")
-  print ("= " ++ show(somaDSecundaria [[1,1,1,3],[1,1,3,1],[1,3,1,1],[3,1,1,1]]))
+  print ("1 1 1 1 3")
+  print ("1 1 1 3 1")
+  print ("1 1 3 1 1")
+  print ("1 3 1 1 1")
+  print ("3 1 1 1 1")
+  print ("= " ++ show(somaDSecundaria [[1,1,1,1,3],[1,1,1,3,1],[1,1,3,1,1],[1,3,1,1,1], [3,1,1,1,1]]))
   putStrLn " "
